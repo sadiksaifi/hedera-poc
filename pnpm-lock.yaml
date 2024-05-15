@@ -5,9 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@hashgraph/sdk':
+    specifier: ^2.44.0
+    version: 2.44.0
   '@hashgraph/stablecoin-npm-sdk':
     specifier: ^1.20.0
     version: 1.20.0(@hashgraph/proto@2.13.0)(react@18.3.1)(typescript@5.4.2)
+  dotenv:
+    specifier: ^16.4.5
+    version: 16.4.5
 
 devDependencies:
   '@types/node':
@@ -383,7 +389,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       espree: 9.6.1
       globals: 13.24.0
       ignore: 5.3.1
@@ -911,7 +917,7 @@ packages:
     resolution: {integrity: sha512-d/Uk+IxFXRGhR8V9FinBTuY99P5F2t9kvB5EsSJ7UVJf4W0uRrtX4sAbf4KuTKGhFFvpJNx8xhUEOhBO8adJfQ==}
     dependencies:
       '@ethersproject/units': 5.7.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       ethers: 5.7.2
       fireblocks-sdk: 3.1.4(debug@4.3.4)
       web3-providers-http: 1.8.0
@@ -1082,6 +1088,14 @@ packages:
       protobufjs: 7.3.0
     dev: false
 
+  /@hashgraph/proto@2.14.0-beta.5:
+    resolution: {integrity: sha512-UrIbLdctpD//Ua99Z4PnknbR8220nc1Pzv0nkDJ1emZE9EAi7YOOry2Dw660azQHWfVw/HhqECPdiKrTIZ2b+Q==}
+    engines: {node: '>=10.0.0'}
+    dependencies:
+      long: 4.0.0
+      protobufjs: 7.3.0
+    dev: false
+
   /@hashgraph/proto@2.9.0:
     resolution: {integrity: sha512-Ot0OVLCl9lNBpHZozN0BS4mvlpxgJ0Bkea4p+6MoQ/+sZtOCu+FMsidIVdvFZBvdNjgPXx8byYjkpmFaxiIOpQ==}
     engines: {node: '>=10.0.0'}
@@ -1106,6 +1120,39 @@ packages:
       '@grpc/grpc-js': 1.8.2
       '@hashgraph/cryptography': 1.4.8-beta.5
       '@hashgraph/proto': 2.14.0-beta.3
+      axios: 1.6.8
+      bignumber.js: 9.1.2
+      bn.js: 5.2.1
+      crypto-js: 4.2.0
+      js-base64: 3.7.7
+      long: 4.0.0
+      pino: 8.21.0
+      pino-pretty: 10.3.1
+      protobufjs: 7.3.0
+      rfc4648: 1.5.3
+      utf8: 3.0.0
+    transitivePeerDependencies:
+      - debug
+      - expo-crypto
+      - expo-random
+    dev: false
+
+  /@hashgraph/sdk@2.44.0:
+    resolution: {integrity: sha512-F+fASqp/8Wp27HFXi2E60qY0Zp60UJWtTonqbIT+TCFbslItbLDJR+p+2FEz3wVCWRq2gJw+1ZMi/CMWtOHYpA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      expo: ^49.0.16
+    peerDependenciesMeta:
+      expo:
+        optional: true
+    dependencies:
+      '@ethersproject/abi': 5.7.0
+      '@ethersproject/bignumber': 5.7.0
+      '@ethersproject/bytes': 5.7.0
+      '@ethersproject/rlp': 5.7.0
+      '@grpc/grpc-js': 1.8.2
+      '@hashgraph/cryptography': 1.4.8-beta.5
+      '@hashgraph/proto': 2.14.0-beta.5
       axios: 1.6.8
       bignumber.js: 9.1.2
       bn.js: 5.2.1
@@ -1225,7 +1272,7 @@ packages:
       - '@hashgraph/sdk'
     dev: false
 
-  /@hethers/abstract-provider@1.2.1(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.40.0):
+  /@hethers/abstract-provider@1.2.1(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0):
     resolution: {integrity: sha512-+nbNS2UCP0HI6OauhJAcRgk57N816cOYT7x8EsyRWjc2GV3YXEJJfzuyCdekeIEozB8hABmrRgqvRlo9hlFdLA==}
     dependencies:
       '@ethersproject/bignumber': 5.5.0
@@ -1234,7 +1281,22 @@ packages:
       '@ethersproject/web': 5.5.0
       '@hethers/logger': 1.2.0
       '@hethers/networks': 1.2.0
-      '@hethers/transactions': 1.2.2(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.40.0)
+      '@hethers/transactions': 1.2.2(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0)
+    transitivePeerDependencies:
+      - '@hashgraph/proto'
+      - '@hashgraph/sdk'
+    dev: false
+
+  /@hethers/abstract-provider@1.2.1(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.44.0):
+    resolution: {integrity: sha512-+nbNS2UCP0HI6OauhJAcRgk57N816cOYT7x8EsyRWjc2GV3YXEJJfzuyCdekeIEozB8hABmrRgqvRlo9hlFdLA==}
+    dependencies:
+      '@ethersproject/bignumber': 5.5.0
+      '@ethersproject/bytes': 5.5.0
+      '@ethersproject/properties': 5.5.0
+      '@ethersproject/web': 5.5.0
+      '@hethers/logger': 1.2.0
+      '@hethers/networks': 1.2.0
+      '@hethers/transactions': 1.2.2(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.44.0)
     transitivePeerDependencies:
       - '@hashgraph/proto'
       - '@hashgraph/sdk'
@@ -1257,7 +1319,24 @@ packages:
       - '@hashgraph/sdk'
     dev: false
 
-  /@hethers/abstract-signer@1.2.3(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.40.0):
+  /@hethers/abstract-signer@1.2.3(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0):
+    resolution: {integrity: sha512-BPgvptjw3QPKmrlmG8o4v7QlLqqIKKR4zAvqZgPUX62unlcFcW2bSjoKx6SF/pB4Ylc1TW52t2p/OhN4J9wzLw==}
+    peerDependencies:
+      '@hashgraph/proto': ^2.9.0
+    dependencies:
+      '@ethersproject/bignumber': 5.5.0
+      '@ethersproject/bytes': 5.5.0
+      '@ethersproject/properties': 5.5.0
+      '@hashgraph/proto': 2.13.0
+      '@hethers/abstract-provider': 1.2.1(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0)
+      '@hethers/address': 1.2.0
+      '@hethers/logger': 1.2.0
+      '@hethers/transactions': 1.2.2(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0)
+    transitivePeerDependencies:
+      - '@hashgraph/sdk'
+    dev: false
+
+  /@hethers/abstract-signer@1.2.3(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.44.0):
     resolution: {integrity: sha512-BPgvptjw3QPKmrlmG8o4v7QlLqqIKKR4zAvqZgPUX62unlcFcW2bSjoKx6SF/pB4Ylc1TW52t2p/OhN4J9wzLw==}
     peerDependencies:
       '@hashgraph/proto': ^2.9.0
@@ -1266,10 +1345,10 @@ packages:
       '@ethersproject/bytes': 5.5.0
       '@ethersproject/properties': 5.5.0
       '@hashgraph/proto': 2.9.0
-      '@hethers/abstract-provider': 1.2.1(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.40.0)
+      '@hethers/abstract-provider': 1.2.1(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.44.0)
       '@hethers/address': 1.2.0
       '@hethers/logger': 1.2.0
-      '@hethers/transactions': 1.2.2(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.40.0)
+      '@hethers/transactions': 1.2.2(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.44.0)
     transitivePeerDependencies:
       - '@hashgraph/sdk'
     dev: false
@@ -1333,6 +1412,26 @@ packages:
       - '@hashgraph/sdk'
     dev: false
 
+  /@hethers/hdnode@1.2.3(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0):
+    resolution: {integrity: sha512-16HQ6/deQGJe1trQpCeJI3H8ywmNd9xlYAJo9n9QmlcZkMFDy2IublT4h8Gp10gpapX4OqrKeSMUZyc3o5wZYQ==}
+    dependencies:
+      '@ethersproject/basex': 5.5.0
+      '@ethersproject/bignumber': 5.5.0
+      '@ethersproject/bytes': 5.5.0
+      '@ethersproject/pbkdf2': 5.5.0
+      '@ethersproject/properties': 5.5.0
+      '@ethersproject/sha2': 5.7.0
+      '@ethersproject/strings': 5.5.0
+      '@ethersproject/wordlists': 5.5.0
+      '@hethers/abstract-signer': 1.2.3(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0)
+      '@hethers/logger': 1.2.0
+      '@hethers/signing-key': 1.2.0
+      '@hethers/transactions': 1.2.2(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0)
+    transitivePeerDependencies:
+      - '@hashgraph/proto'
+      - '@hashgraph/sdk'
+    dev: false
+
   /@hethers/json-wallets@1.2.3(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.40.0):
     resolution: {integrity: sha512-Yxa9/RC8P/He8tTHUYTXlcf09NChd5RJlAdzcf0ScHduslRpcuwtzuhvL0Z5zEla7N8QFpEC17RKR0JQKqkbUA==}
     dependencies:
@@ -1347,6 +1446,27 @@ packages:
       '@hethers/hdnode': 1.2.3(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.40.0)
       '@hethers/logger': 1.2.0
       '@hethers/transactions': 1.2.2(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.40.0)
+      aes-js: 3.0.0
+      scrypt-js: 3.0.1
+    transitivePeerDependencies:
+      - '@hashgraph/proto'
+      - '@hashgraph/sdk'
+    dev: false
+
+  /@hethers/json-wallets@1.2.3(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0):
+    resolution: {integrity: sha512-Yxa9/RC8P/He8tTHUYTXlcf09NChd5RJlAdzcf0ScHduslRpcuwtzuhvL0Z5zEla7N8QFpEC17RKR0JQKqkbUA==}
+    dependencies:
+      '@ethersproject/bytes': 5.5.0
+      '@ethersproject/keccak256': 5.5.0
+      '@ethersproject/pbkdf2': 5.5.0
+      '@ethersproject/properties': 5.5.0
+      '@ethersproject/random': 5.5.0
+      '@ethersproject/strings': 5.5.0
+      '@hethers/abstract-signer': 1.2.3(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0)
+      '@hethers/address': 1.2.0
+      '@hethers/hdnode': 1.2.3(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0)
+      '@hethers/logger': 1.2.0
+      '@hethers/transactions': 1.2.2(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0)
       aes-js: 3.0.0
       scrypt-js: 3.0.1
     transitivePeerDependencies:
@@ -1379,14 +1499,14 @@ packages:
       '@ethersproject/strings': 5.5.0
       '@ethersproject/web': 5.5.0
       '@hashgraph/proto': 2.9.0
-      '@hashgraph/sdk': 2.40.0
-      '@hethers/abstract-provider': 1.2.1(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.40.0)
-      '@hethers/abstract-signer': 1.2.3(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.40.0)
+      '@hashgraph/sdk': 2.44.0
+      '@hethers/abstract-provider': 1.2.1(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.44.0)
+      '@hethers/abstract-signer': 1.2.3(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.44.0)
       '@hethers/address': 1.2.0
       '@hethers/constants': 1.2.0
       '@hethers/logger': 1.2.0
       '@hethers/networks': 1.2.0
-      '@hethers/transactions': 1.2.2(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.40.0)
+      '@hethers/transactions': 1.2.2(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.44.0)
       '@types/axios': 0.14.0
       axios: 0.24.0
       bech32: 1.1.4
@@ -1430,7 +1550,26 @@ packages:
       '@hethers/signing-key': 1.2.0
     dev: false
 
-  /@hethers/transactions@1.2.2(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.40.0):
+  /@hethers/transactions@1.2.2(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0):
+    resolution: {integrity: sha512-8/8y3tb7xKlFOX0bo9MvKTpm0OvMct8r6N67UJpwwLivpAHx7533uhPyLSr1E/TB9Q1TyZGkaFCkupqMOqRwvg==}
+    peerDependencies:
+      '@hashgraph/proto': ^2.9.0
+      '@hashgraph/sdk': ^2.19.0
+    dependencies:
+      '@ethersproject/base64': 5.5.0
+      '@ethersproject/bignumber': 5.5.0
+      '@ethersproject/bytes': 5.5.0
+      '@ethersproject/keccak256': 5.5.0
+      '@ethersproject/properties': 5.5.0
+      '@hashgraph/proto': 2.13.0
+      '@hashgraph/sdk': 2.44.0
+      '@hethers/address': 1.2.0
+      '@hethers/constants': 1.2.0
+      '@hethers/logger': 1.2.0
+      '@hethers/signing-key': 1.2.0
+    dev: false
+
+  /@hethers/transactions@1.2.2(@hashgraph/proto@2.9.0)(@hashgraph/sdk@2.44.0):
     resolution: {integrity: sha512-8/8y3tb7xKlFOX0bo9MvKTpm0OvMct8r6N67UJpwwLivpAHx7533uhPyLSr1E/TB9Q1TyZGkaFCkupqMOqRwvg==}
     peerDependencies:
       '@hashgraph/proto': ^2.9.0
@@ -1442,7 +1581,7 @@ packages:
       '@ethersproject/keccak256': 5.5.0
       '@ethersproject/properties': 5.5.0
       '@hashgraph/proto': 2.9.0
-      '@hashgraph/sdk': 2.40.0
+      '@hashgraph/sdk': 2.44.0
       '@hethers/address': 1.2.0
       '@hethers/constants': 1.2.0
       '@hethers/logger': 1.2.0
@@ -1466,15 +1605,15 @@ packages:
       '@ethersproject/properties': 5.5.0
       '@ethersproject/random': 5.5.0
       '@ethersproject/wordlists': 5.5.0
-      '@hashgraph/sdk': 2.40.0
-      '@hethers/abstract-provider': 1.2.1(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.40.0)
-      '@hethers/abstract-signer': 1.2.3(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.40.0)
+      '@hashgraph/sdk': 2.44.0
+      '@hethers/abstract-provider': 1.2.1(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0)
+      '@hethers/abstract-signer': 1.2.3(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0)
       '@hethers/address': 1.2.0
-      '@hethers/hdnode': 1.2.3(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.40.0)
-      '@hethers/json-wallets': 1.2.3(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.40.0)
+      '@hethers/hdnode': 1.2.3(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0)
+      '@hethers/json-wallets': 1.2.3(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0)
       '@hethers/logger': 1.2.0
       '@hethers/signing-key': 1.2.0
-      '@hethers/transactions': 1.2.2(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.40.0)
+      '@hethers/transactions': 1.2.2(@hashgraph/proto@2.13.0)(@hashgraph/sdk@2.44.0)
     transitivePeerDependencies:
       - '@hashgraph/proto'
       - debug
@@ -1488,7 +1627,7 @@ packages:
     engines: {node: '>=10.10.0'}
     dependencies:
       '@humanwhocodes/object-schema': 2.0.2
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -1749,7 +1888,7 @@ packages:
       '@nomicfoundation/ethereumjs-trie': 5.0.5
       '@nomicfoundation/ethereumjs-util': 8.0.6
       abstract-level: 1.0.4
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       ethereum-cryptography: 0.1.3
       level: 8.0.1
       lru-cache: 5.1.1
@@ -1785,7 +1924,7 @@ packages:
       '@nomicfoundation/ethereumjs-util': 8.0.6
       '@types/async-eventemitter': 0.2.4
       async-eventemitter: 0.2.4
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       ethereum-cryptography: 0.1.3
       mcl-wasm: 0.7.9
       rustbn.js: 0.2.0
@@ -1806,7 +1945,7 @@ packages:
       '@nomicfoundation/ethereumjs-rlp': 4.0.3
       '@nomicfoundation/ethereumjs-trie': 5.0.5
       '@nomicfoundation/ethereumjs-util': 8.0.6
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       ethereum-cryptography: 0.1.3
       functional-red-black-tree: 1.0.1
     transitivePeerDependencies:
@@ -1856,7 +1995,7 @@ packages:
       '@nomicfoundation/ethereumjs-util': 8.0.6
       '@types/async-eventemitter': 0.2.4
       async-eventemitter: 0.2.4
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       ethereum-cryptography: 0.1.3
       functional-red-black-tree: 1.0.1
       mcl-wasm: 0.7.9
@@ -2089,7 +2228,7 @@ packages:
       axios-token-interceptor: 0.2.0
       base64url: 3.0.1
       bs58: 5.0.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       did-jwt: 6.11.6
       dotenv: 16.4.5
       lodash: 4.17.21
@@ -2722,7 +2861,7 @@ packages:
       '@typescript-eslint/type-utils': 7.2.0(eslint@8.57.0)(typescript@5.4.2)
       '@typescript-eslint/utils': 7.2.0(eslint@8.57.0)(typescript@5.4.2)
       '@typescript-eslint/visitor-keys': 7.2.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       eslint: 8.57.0
       graphemer: 1.4.0
       ignore: 5.3.1
@@ -2748,7 +2887,7 @@ packages:
       '@typescript-eslint/types': 7.2.0
       '@typescript-eslint/typescript-estree': 7.2.0(typescript@5.4.2)
       '@typescript-eslint/visitor-keys': 7.2.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       eslint: 8.57.0
       typescript: 5.4.2
     transitivePeerDependencies:
@@ -2775,7 +2914,7 @@ packages:
     dependencies:
       '@typescript-eslint/typescript-estree': 7.2.0(typescript@5.4.2)
       '@typescript-eslint/utils': 7.2.0(eslint@8.57.0)(typescript@5.4.2)
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       eslint: 8.57.0
       ts-api-utils: 1.3.0(typescript@5.4.2)
       typescript: 5.4.2
@@ -2799,7 +2938,7 @@ packages:
     dependencies:
       '@typescript-eslint/types': 7.2.0
       '@typescript-eslint/visitor-keys': 7.2.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
@@ -3364,7 +3503,7 @@ packages:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
     dependencies:
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -4383,6 +4522,7 @@ packages:
     dependencies:
       ms: 2.1.2
       supports-color: 5.5.0
+    dev: true
 
   /debug@4.3.4(supports-color@8.1.1):
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
@@ -4395,7 +4535,6 @@ packages:
     dependencies:
       ms: 2.1.2
       supports-color: 8.1.1
-    dev: false
 
   /decamelize@1.2.0:
     resolution: {integrity: sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA==}
@@ -4830,7 +4969,7 @@ packages:
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.3
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.2.2
@@ -5371,7 +5510,7 @@ packages:
       debug:
         optional: true
     dependencies:
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
     dev: false
 
   /for-each@0.3.3:
@@ -5723,7 +5862,7 @@ packages:
       chalk: 2.4.2
       chokidar: 3.6.0
       ci-info: 2.0.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
       enquirer: 2.4.1
       env-paths: 2.2.1
       ethereum-cryptography: 1.2.0
@@ -5894,7 +6033,7 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -8267,7 +8406,6 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       has-flag: 4.0.0
-    dev: false
 
   /supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}

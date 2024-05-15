@@ -1,1 +1,1 @@
-# Fastify template with typescript, eslint, prettier, pnpm
+# Hedera Blockchain POC

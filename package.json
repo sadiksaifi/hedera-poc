@@ -5,8 +5,9 @@
   "packageManager": "pnpm@8.15.4",
   "scripts": {
     "dev": "nodemon",
+    "start": "tsx src/app.ts",
     "build": "tsc",
-    "start": "node dist/app.js",
+    "start:prod": "node dist/app.js",
     "lint": "eslint . --ext .ts"
   },
   "devDependencies": {
@@ -22,6 +23,8 @@
     "typescript": "*"
   },
   "dependencies": {
-    "@hashgraph/stablecoin-npm-sdk": "^1.20.0"
+    "@hashgraph/sdk": "^2.44.0",
+    "@hashgraph/stablecoin-npm-sdk": "^1.20.0",
+    "dotenv": "^16.4.5"
   }
 }
