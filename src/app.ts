@@ -12,7 +12,7 @@ async function createStablecoin() {
   const transaction = await new TokenCreateTransaction()
     .setTokenName("MyStablecoin")
     .setTokenSymbol("MYS")
-    .setTokenType(TokenType.FungibleCommon)
+    .setTokenType(TokenType.NonFungibleUnique)
     .setTreasuryAccountId(client.operatorAccountId!)
     .setSupplyKey(treasuryKey)
     .setAdminKey(adminKey)
